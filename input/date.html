@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="date.jsp" method="GET">
+        <h3>오늘 날짜 입력</h3>
+        Today: <input type="date" name="today">
+        <h3>프로젝트 수행 기간</h3>
+        From : <input type="date" name="to" min="2015-01-01" max="2030-01-01">
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+<br><br><br><br>
+
+
+    <form action="date.jsp" method="GET">
+        <h3>생일(년/월) 입력</h3>
+        생일: <input type="month" name="birth">
+        <h3>주간 계획(년/주) 입력</h3>
+        주간 계획 : <input type="week" name="weekeend">
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+    <br><br><br><br>
+
+    <form action="date.jsp" method="GET">
+        <h3>현재 시간 입력</h3>
+        Time : <input type="time" name="Now">
+        <h3>생일(년도, 월, 일, 시간) 입력</h3>
+        Birthday : <input type="datetime-local" name="bdaytime">
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+</html>

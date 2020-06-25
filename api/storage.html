@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            localStorage.clickCnt=0;
+        function clickCnt() {
+            // console.log("dddd")
+            if (localStorage.clickCnt) {
+                localStorage.clickCnt = Number(localStorage.clickCnt) + 1;
+            }
+            else { 
+            localStorage.clickCnt = 1;
+            }
+        document.getElementById("show").innerHTML = localStorage.clickCnt;    
+        }
+
+        function setName(){
+            var v_name = document.getElementById("name").value;
+            
+            localStorage.setItem("textname", v_name);  //textname이라는거에 v_name을 담겠다.
+        }
+        function getName(){
+            var v_name = localStorage.getItem("textname"); //set에서 지정해둔 textname을 불러오겠다.
+            document.getElementById("sgname").innerHTML = v_name;
+            window.alert(v_name);
+        }
+    </script>
+
+</head>
+
+<body>
+    <button onclick="clickCnt()">Click</button>
+    <p id="show"></p>
+    <input type="text" id="name"> <br>
+    <button onclick="setName()">이름저장</button>
+    <button onclick="getName()">이름불러오기</button>
+    <p id="sgname"></p>
+</body>
+
+</html>

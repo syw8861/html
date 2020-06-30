@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>h3 {
+            color: blue;
+        }
+
+        div h3 {
+            color: red;
+        }
+        body>div>h1 {
+            color: green;
+        }
+        </style>
+        <!--자손으로 p태그나 h태그오면 그 밑에 후손은 따로 적용해줘야?-->
+</head>
+
+<body>
+    <div>
+        <h1>h1h1</h1>
+        <h2>h2h2</h2>
+        
+        <div>
+            h3
+            <h1>div안에 div안에 h1</h1>
+            <h3>h3안에h3</h3>
+            <li>h3안에 li</li>
+            <li>h3안에 li</li>
+            <li>h3안에 li</li>
+            <h3>h3안에 h3마지막</h3>
+        </div>
+        <h3>h3p다음</h3>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/basic.html</title>
+     <script src="basic.js"></script>
+    <!--스크립트는 타입이 var밖에 없다/ 값이 들어가는 시점에 타입이 정해진다. 숫자를 넣으면 인트 문자를넣으면 STring처럼-->
+</head>
+
+<body>
+    <!--innerHTML은 id값이 저놈인거에다가 HTML형식으로 뿌려주겠다.-->
+    <!--script는 절차지향이기 때문에 속성값이 id인애가 HTML로 World라고 적혀있지만, script가 먼저 실행되기 때문에
+    스크립트에서 element가 id인애가 없는걸로 인식되서 world만 출력된다.-->
+    <script>
+        document.getElementById("id").innerHTML = "Hello";
+    </script>
+        <p id="id">World</p>
+</body>
+
+</html>

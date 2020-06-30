@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var person = { //object타입은 key와 value로 구분된다. key->name value->kildong 이런거마냥
+            firstName : "kildong",
+            lastName :"Hong",
+            age: 20,
+            fullname: function(){return this.firstName + this.lastName}
+        }
+        
+        console.log(person.fullname());
+        console.log(person.firstName);
+        console.log(person.lastName);
+
+        var anyAry = [1,2,3,4, 'hello',person];
+        for(var i=0; i<anyAry.length; i++){
+            console.log(anyAry[i]);
+        }
+
+        console.log(anyAry[5].firstName);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="score" value="80" placeholder="숫자입력">
+    <br>
+    <button onclick="checkScroe()">Click</button><br>
+    <p id="show"></p>
+    <script>
+        function checkScroe(){
+            var score = document.getElementById("score").value;
+            score = parseInt(score);
+            var element1 = document.getElementById("show");
+            console.log(typeof score);
+            console.log(element1);
+            if(score>=90){
+                element1.innerHTML = 'A';
+                element1.setAttribute('style','background-color: blue');
+                // console.log('a');
+            }else if(score>=80){
+                element1.innerHTML = 'B';
+                element1.setAttribute('style','background-color: red');
+                // console.log('b');
+            }else if(score>=70){
+                element1.innerHTML = 'C';
+                element1.setAttribute('style','background-color: white');
+                // console.log('c');
+            }else
+                element1.innerHTML = '재수강';
+                element1.setAttribute('style','background-color: green');
+                // console.log("재수강");
+            
+        }
+    </script>
+</body>
+</html>

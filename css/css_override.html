@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="css_override.css">
+    </link>
+    <style>
+        * {
+            color: red;
+            background-color: aqua;
+            font-size: 30;
+            border: 1;
+        }
+
+        .class1 {
+            color: white;
+            background-color: black;
+        }
+
+        .class2 {
+            color: blue;
+            background-color: red;
+        }
+
+        h2.class2 {
+            color: teal;
+            background-color: darkorchid;
+        }
+
+        #idid {
+            color: red;
+            background-color: green;
+        }
+        <!--텍스트가 먼저오고 그다음 속성값이 있는게 와야함-->
+        h3[text] { 
+            color: violet;
+            background-color: slateblue;
+        }
+        h2[aa]{
+            color: red;
+            background-color: black;
+        }
+        h3[text="hoho"] {
+            color: brown;
+            background-color: chocolate;
+        }
+        h3[text$="kaka"]{
+            color: chartreuse;
+            background-color: black;
+        }
+        h3[text^="akak"]{
+            color: brown;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <p>p태그 태그태그</p>
+    <h1>바디바디태그태그</h1>
+    <h2>태그태그바바바바</h2>
+    <h3>태태태그그그그</h3>
+    <h1 class="class1">class1입니더</h1>
+    <h2 class="class2">class2입ㄴ</h2>
+    <h3 class="class2">class2인데 h3입니다ㅏㅏ</h3>
+    <h3 id="idid">idid입니다ㅏㅏ</h3>
+    <h3 text="hoho">text=hoho속성 h3</h3>
+    <h3 text>걍 text속성</h3>
+    <h2 aa>aa속성</h2>
+    <h3 text="rprp.kaka">뒤가 kaka로 끝나는 h3</h3>
+    <h3 text="akak.rprp">앞이 akak로 싲가h3</h3>
+</body>
+
+</html>

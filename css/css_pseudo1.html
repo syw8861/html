@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <h1>Pseudo Class</h5>
+
+        <style>
+            a:link {
+                color: blue;
+                text-decoration: underline;
+            }
+
+            a:visited {
+                color: red;
+            }
+
+            a:hover {
+                text-decoration: overline;
+                
+            }
+
+            a:active {
+                background-color: yellow;
+            }
+
+            div.d1 {
+                border: 1px dashed red;
+                width: 400px;
+                padding: 5px;
+            }
+
+            div.d1:hover {
+                background-color: green;
+                background-image: url("https://post-phinf.pstatic.net/MjAxODAzMTdfOTkg/MDAxNTIxMjIxNjQxMDU0.A2fmDATYaT8bV6SA-96QpqCRkOhe2sU7IYKBkyoq0swg.RRtwV_Y_OcJfVAophInm1zc5bFCRQR-CplxXeEpY7Fwg.JPEG/1600_1200_20120629021538662567.jpg");
+                width: 2000px;
+                height: 1000px;
+                transition: all 1.5s linear 1.0s;
+                
+            }
+
+            div.d2 {
+                border: 1px dashed black;
+                width: 400px;
+                padding: 5px;
+            }
+            div.d2{
+                background-color: red;
+                color: white;
+            }
+            div.d2:hover {
+                background-color: blueviolet;
+                transition: all 1.5s linear 0.5s;
+                width: 500px;
+                color: black;
+                
+            }
+
+            input[type=text] {
+                width: 100px;
+                -webkit-transition: width .35s ease-in-out;
+                transition: width .35s ease-in-out;
+            }
+            
+            input[type=text]:focus {
+                width: 800px; height: 50px; 
+            }
+        </style>
+</head>
+
+<body>
+    <p><a href="http://www.w3.org" target="_blink">W3C방문</a>: 마우스 이벤트에 따른 링크 변화를 보셈</p>
+    <div class="d1">
+        <h3>가상 클래스1 영억</h3>
+        마우스 위치에 따른 박스의 스타일 변화 보셈
+    </div>
+    <div class="d2">
+        <h3>가상 클래스2 영역</h3>
+        마우스 위치에 따른 박스의 스타일변화 보셈
+    </div>
+    Search: <input type="text" name="search">
+
+    <p>Open from <time>10:00</time> to <time>21:00</time> every weekday.</p>
+    <p>I have a date on <time datetime="2020-02-14 20:00">Valentines day</time>.</p>
+</body>
+
+</html>

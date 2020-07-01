@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='Hello'; //typeof str ->string
+        var str1 = str.length;
+        var str2 = new String("Hello");
+        console.log(str1==str2);
+        console.log(str==str2);
+        console.log(str === str2); // ===이거 세개는 타입까지 비교하겠다는거임 str2는 object타입이고 str은 string타입임 str1은 int타입임.
+
+        str = 'locate Please locate where "locate" occurs!';
+        // console.log(str.indexOf('locate')); //indexOf는 str안에 locate라는게 있으면 값의 위치를 리턴해달라는거 7나옴 맨앞이 0부터시작 띄워쓰기도 1로 인식
+        // console.log(str.lastIndexOf('locate')); // lastIndex는 뒤에서부터 locate라는걸 찾는거임
+        // console.log(str.indexOf('locate',10)); //10번째부터 locate를 찾겠다.
+        // console.log(str.search('locate')); //값이 2개가 못들어옴 위에서처럼 위치값 주는거 못함.
+
+        // console.log(str.slice(7,13)); //앞 위치값부터 뒤까지 잘라내겠다. // substring, substr
+        // document.write('<b>' + str.slice(7,13)+'</b>');
+
+        // var result = str.substr(7, 13); //7번부터 13개를 잘라오겠다.
+        // document.write('<h1>'+ result + '</h1>');
+
+        // result1 = str.replace(/locate/g , 'rocate');//str안에 locate전체를 rocate로 바꾸겠다.
+        // result = str.replace('locate', 'rocate'); //str안에 locate를 rocate로 바꾸겠다. 근데 이렇게하면 앞에 1개만 바뀜
+        // console.log(result);
+        // console.log(result1);
+
+        // result = str.toLowerCase(); //소문자로 변형 전부다
+        // document.write(result +'akakakak');
+        // result = str.toUpperCase();//대문자로 변형 전부다
+
+        // result ="Hello".concat("World!", "Welcome"); //연결해주는거
+        // document.write(result);
+
+        var sp = "banana,orange,apple".split(','); //sp는 split을쓰면 배열로들어감 콤마기준으로 한마디로 배열3칸에다가 bann , ora, aple이 드가는거
+        for(var i=0; i<sp.length; i++){
+            document.write(sp[i]);
+        }
+        for(i of sp){ //확장for임 
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

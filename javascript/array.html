@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var ary =['hong','kim','park'];
+        // for(var i=0; i<ary.length; i++){
+        //     ary[i];
+        // }
+        // ary[0]='hwang';
+        // ary[1]='lee';
+        // for(i of ary){
+        //     document.write(i);
+        // }
+
+        // var ary2 = new Array('hong','lee','park'); //이래써도 되긴한데 위에가 편함스
+        // for(i of ary2){
+        //     console.log(i);
+        // }
+
+        // var person ={ //배열에 담는게 아니라 object에 담는거임
+        //             firstName:'hong',
+        //             lastName:'kong',
+        //             age:30
+        //             };
+
+
+        // console.log(person.firstName); 
+        // console.log(person['firstName']); //[]안에 있지만 배열이 아님 위에거랑 같은거임
+
+        // for(i in person){ //in이라는걸 쓰면 배열이 아니라 person변수에 담겨있는 필드명을 가져옴 
+        //     console.log("필드명: "+i+",   값: "+person[i]);
+        // }
+
+        var fruits = ['banana', 'orange', 'mango', 'apple'];
+        document.write("<ul>")
+        for (i of fruits) {
+            document.write("<li>" + i + "</li>");
+        }
+        document.write("</ul>")
+
+        fruits.forEach(function (a, b, c) { //function이 매개값으로 사용하고 a배열하나에 값 b인덱스값 c배열
+            document.write("<ol>");
+            console.log(a, b, c);
+            document.write("<li>" + a + '</li>');
+            document.write("<li>" + b + '</li>');
+            document.write("<li>" + c + '</li>');
+        }); // forEach<--배열에 각각의 요소에 대해서 function을 실행해라
+        document.write("</ol>");
+
+        var persons = []; //오브젝트로 만들어진걸 배열에다가 집어 넣어버리기~ num69~71;;
+        var person1 = {
+            firstName: "Kildong",
+            lastName: "hong",
+            age: 30
+        };
+        var person2 = {
+            firstName: "yong",
+            lastName: "son",
+            age: 40
+        };
+        var person3 = {
+            firstName: "young",
+            lastName: "son",
+            age: 20
+        };
+        persons[0] = person1;  //이런식으로 인덱스0에 넣어도되고
+        persons.push(person2); //이런식으로 넣어도된다
+        persons.push(person3);
+
+        // for(i of persons){
+        //     console.log(i.firstName, i.lastName,i.age);
+        // }
+        // persons.forEach(function(obj, idx, ary){
+        //     document.write('<li>'+obj.firstName+'</li>');
+        //     document.write('<li>'+idx+'</li>');
+        //     document.write('<li>'+ary+'</li>');
+        // });
+
+
+        document.write('<table border="1">');
+        document.write('<tr>');
+        for (f in person1) {
+            document.write("<th>" + f + "</th>")
+        }
+        persons.forEach(function (obj, idx, ary) {
+            document.write('</tr>')
+            document.write('<tr>')
+            document.write('<td>' + obj.firstName + '</td><td>' + obj.lastName + '</td><td>' + obj.age + '</td>');
+            document.write('</tr>')
+        });
+        document.write('</table>');
+
+
+        document.write('<table border="1">');
+        document.write('<tr>');
+        for (f in person1) {
+            document.write("<th>" + f + "</th>")
+        }
+        document.write('</tr>')
+        persons.forEach(showtable);
+        document.write('</table>');
+
+        function showtable(elm) {
+            document.write('<tr>')
+            document.write('<td>' + elm.firstName + '</td><td>' + elm.lastName + '</td><td>' + elm.age + '</td>');
+            document.write('</tr>')
+        };
+
+
+
+    </script>
+</body>
+
+</html>

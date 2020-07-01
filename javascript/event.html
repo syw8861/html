@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="show"></p>
+    <button onclick="showCurrentTime()"
+            onmouseover="changeBackground(this)" 
+            onmouseout="changeBackgroundcolor(this)">Click</button>
+    <script>
+        function showCurrentTime(){
+            document.getElementById('show').innerHTML=Date()
+        }
+        function changeBackground(elmt){
+            console.log(elmt);
+            elmt.setAttribute('style','background-color: yellow');  //받아온 this<<-button자체의 style을 back이걸로 바꾸겠다.
+        }
+        function changeBackgroundcolor(elmt){
+            elmt.setAttribute('style','background-color: null');
+        }
+    </script>
+</body>
+</html>

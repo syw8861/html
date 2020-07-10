@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onchange="elementFunc()" type="text" id="val1"> +
+    <input onchange="elementFunc()" type="text" id="val2"> =  <!-- onchange 이벤트는 값이 바뀌어지면 일어나는 이벤트-->
+    <input type="text" id="result"><br>
+    <button onclick='elementFunc()'>Click</button> <!-- 변수에다가 담은 function을 실행해줄수도 있다.-->
+
+    <script>
+        var plusfunc = function(a,b){
+            return a+b;
+        }
+     
+        var elementFunc = function(){ 
+            
+            var b = document.getElementById('val2').value;
+            var a = document.getElementById('val1').value;
+            if(a == ""){
+                a=0;
+            }else if (b==""){
+                b=0;
+            }
+            var result = plusfunc(parseInt(b),parseInt(a));
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

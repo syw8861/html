@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){ //모든 버튼에 function을 다는거임
+
+    $("ul li:first").hide(); //선택된 값이 안보이게 하는법 웹에서
+
+    // var lis = document.querySelectorAll('ul')[0].querySelectorAll('li:first-child');
+    // for(var i=0; i<lis.length; i++){
+    //    lis[i].style.display="none";
+    // } 
+    // 이거랑 같다.
+  });
+
+
+    $('button').eq(1).hover(function(){ //첫번째 옵션은 마우스가 올라갈때   //  .eq(1)은 첫번째 인덱스값꺼를 쓰고싶다 할때
+        $(this).css("background","skyblue");
+    }, function(){ //마우스가 나갈때
+        $(this).css("background","black");
+    });
+
+    $(":button") //버튼이라는걸 속성값으로 가지고 있는걸 삭제
+    
+
+
+  $('li').click(function(){
+      alert("클릭하지마러ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ");
+  })
+  $('li').click(function(){
+      $(this).hide();
+  })
+  $('li').mouseenter(function(){
+      $(this).css("background","yellow");
+  })
+  $('li').mouseleave(function(){
+      $(this).css("background","");
+  })
+
+  
+
+});
+</script>
+</head>
+<body>
+
+<p>List 1:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Tea</li>
+</ul>
+
+<p>List 2:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Tea</li>
+</ul>
+
+<button>Click me</button>
+<button>Click me</button>
+
+</body>
+</html>

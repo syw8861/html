@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="cal"></p>
+    년도: <input type="text" id="year"><br>
+    월  : <input type="text" id="month"><br>
+    <button onclick="showCalender()">Show cal</button>
+    <script>
+        function showCalender() {
+            // var today1 = Date();
+            // console.log(today1);
+            // console.log(today);
+            var year = document.getElementById("year").value;
+            var month = document.getElementById("month").value;
+
+            var today = new Date(year, month-1, 1);
+            // console.log(today.getDay()); //today(요일)의 값을 나타내줌
+            var lastday = new Date(year, month, 0).getDate(); //매개값으로 받은 (2020/8)이면 month는 1월이 0부터 시작해서 7월임 쨋든 getDate는 매개값달의 
+            // 전 달의 마지막날
+            var emptyTd = today.getDay(); //해당 월의 1일을 가져온다.
+            
+
+            var dayAry = ["일", "월", "화", "수", "묵", "금", "토"];
+            var $table = document.createElement('table'); //테이블(element)를 하나 만들겠다. <table></table>
+            $table.setAttribute('border', '1');
+            var $tr = document.createElement('tr'); // tr태그(element)를 하나 만들겠다. <tr></tr>
+            for (var i = 0; i < dayAry.length; i++) {
+                var $th = document.createElement('th'); //<th></th>하나 제작
+                var $text = document.createTextNode(dayAry[i]); //텍스트값이 하나 만들어짐
+                $th.appendChild($text); //th태그에 $text를 자식으로 넣겠다. <th>$text</th> <-이거 위에서 만든
+                $tr.appendChild($th); //<tr><th>$text</th></tr> 이런식으로 되는
+            }
+            $table.appendChild($tr); // <table> 여기다가 위에서 for문으로 만든 <tr><th>$text</tr></th> *dayAry.length  </table> 를 넣겠다.
+            // console.log($table);
+            $tr = document.createElement('tr');
+
+            for (var i = 0; i < emptyTd; i++) {
+                var $td = document.createElement('td');
+                $td.appendChild(document.createTextNode(' '));
+                $tr.appendChild($td);
+            }
+            for (var i = 0; i < lastday; i++) {
+                console.log(lastday);
+                var $text = document.createTextNode(i + 1);
+                var $td = document.createElement('td');
+                $td.appendChild($text);
+                $tr.appendChild($td);
+                if ((i + emptyTd) % 7 == 0) {
+                    $td.setAttribute('style', 'background-color:red');
+                }
+                if ((i + emptyTd)%7 ==6){
+                    $td.setAttribute('style', 'background-color:blue;');
+                    $table.appendChild($tr);
+                    $tr = document.createElement('tr');
+                }
+            }
+            $table.appendChild($tr);
+            document.getElementById('cal').appendChild($table);
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="show">
+        <table border="1" id="tbl">
+            <tr>
+                <th>FirstName</th>
+                <th>EmpId</th>
+                <th>LastName</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Kildong</td>
+                <td>Hong</td>
+                <td><button>Delete</button></td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>REOA</td>
+                <td>K</td>
+                <td><button>Add</button></td>
+            </tr>
+        </table>
+    </p>
+    <script>
+        
+        
+        var a = document.getElementById("tbl").childNodes[1].childNodes[2].childNodes[7].childNodes[0].childNodes[0]
+
+        a.nodeValue = "save";
+        a.parentNode.style.background="red";
+        a.parentNode.parentNode.style.background="blue"
+        a.parentNode.parentNode.parentNode.style.background="yellow"
+
+    </script>
+</body>
+</html>

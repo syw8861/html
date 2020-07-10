@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var xhtp = new XMLHttpRequest();
+
+        xhtp.onreadystatechange = function()
+        {
+            if(xhtp.readyState == 4 && xhtp.status=='200')
+            {
+            showXml(xhtp.responseXML);
+            }
+        }
+        xhtp.open("get",'cd_catalog.xml');
+        xhtp.send();
+
+            function showXml(x)
+            {
+                var datas = x;
+                var cds = datas.getElementsByTagName('CD');
+                var table = "<table border='1'>";
+                table += "<tr><th>title</th><th>artist</th><th>Country</th></tr>";
+                for(var i=0; i<cds.length; i++)
+                {   
+                    table += "<tr>";
+                    table += "<td>"+ cds[i].childNodes[1].childNodes[0].nodeValue+"<br>";
+                        table += "<td>"+ cds[i].childNodes[3].childNodes[0].nodeValue+"<br>";
+                            table += "<td>"+ cds[i].childNodes[5].childNodes[0].nodeValue+"<br>";    
+                    table += "</tr>";
+                }
+                table += "</table>";
+                document.body.innerHTML=table;
+            }
+            
+    </script>
+</body>
+</html>

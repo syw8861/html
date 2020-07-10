@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" text="" id="a">
+    <input type="text" text="" id="b">
+    <input type="text" text="" id="c">
+    <button id="btn">click</button>
+    <script>
+        var plusfunc = function(a,b)
+        {
+            var sum = 0;
+            for(var i=a; i<=b; i++)
+            {
+                sum += i;
+            }
+            return sum;
+        }
+
+        btn.onclick = function ()
+        { 
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var sum = plusfunc(parseInt(a),parseInt(b));
+            document.getElementById("c").value = sum;
+            
+            //방법2
+            // var inputi = document.getElementsByTagName("input");
+            // var num1 = inputi[0].value;
+            // var num2 = inputi[1].value;
+            // var sum1 = plusfunc(num1, num2);
+            // document.getElementById("c").value=sum1;
+
+            //방법3
+            // var inputs = document.querySelectorAll('body>input');
+            // var num11 = inputs[0].value;
+            // var num22 = inputs[1].value;
+            // console.log(num11);
+            // console.log(num22);
+        }
+
+    </script>
+</body>
+
+</html>

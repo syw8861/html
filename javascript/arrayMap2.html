@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="gender" id="gender" onchange="onchangeFunc()">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <p id="show"></p>
+    <script>
+        var lala = [{ "id": 1, "first_name": "Allyn", "last_name": "Kleis", "email": "akleis0@de.vu", "gender": "Male" },
+        { "id": 2, "first_name": "Lyssa", "last_name": "Gradly", "email": "lgradly1@ed.gov", "gender": "Female" },
+        { "id": 3, "first_name": "Sheena", "last_name": "Theodore", "email": "stheodore2@lulu.com", "gender": "Female" },
+        { "id": 4, "first_name": "Rasia", "last_name": "Bearham", "email": "rbearham3@slate.com", "gender": "Female" },
+        { "id": 5, "first_name": "Conrade", "last_name": "Alten", "email": "calten4@intel.com", "gender": "Male" },
+        { "id": 6, "first_name": "Dolley", "last_name": "Janny", "email": "djanny5@chronoengine.com", "gender": "Female" },
+        { "id": 7, "first_name": "Cornie", "last_name": "Wines", "email": "cwines6@abc.net.au", "gender": "Male" },
+        { "id": 8, "first_name": "Lawrence", "last_name": "Bertelet", "email": "lbertelet7@gnu.org", "gender": "Male" },
+        { "id": 9, "first_name": "Pen", "last_name": "Avery", "email": "pavery8@ucla.edu", "gender": "Male" },
+        { "id": 10, "first_name": "Kristel", "last_name": "Orringe", "email": "korringe9@toplist.cz", "gender": "Female" },
+        { "id": 11, "first_name": "Rowen", "last_name": "Pecey", "email": "rpeceya@devhub.com", "gender": "Male" },
+        { "id": 12, "first_name": "Alford", "last_name": "Gaynesford", "email": "agaynesfordb@e-recht24.de", "gender": "Male" },
+        { "id": 13, "first_name": "Shena", "last_name": "Tollady", "email": "stolladyc@engadget.com", "gender": "Female" },
+        { "id": 14, "first_name": "Valdemar", "last_name": "McKeefry", "email": "vmckeefryd@elegantthemes.com", "gender": "Male" },
+        { "id": 15, "first_name": "Maureene", "last_name": "MacMeeking", "email": "mmacmeekinge@wordpress.com", "gender": "Female" }];
+
+        function onchangeFunc(){
+
+        var newAry = lala.map(function(o,i,a){
+            o.first_name = o.first_name.toUpperCase();
+            return o;
+        });
+
+        var filterAry = newAry.filter(function(o,i){
+            return o.gender == document.getElementById("gender").value;
+        });
+        var $show = document.getElementById("show");
+        //기존화면요소 지워주기
+        var child = $show.children.length;
+        for(var i=0; i<child; i++){
+            $show.removeChild($show.firstChild);
+        };
+
+        filterAry.forEach(function(o){
+            var $text = document.createTextNode(o.first_name+ ' , ' + o.gender);
+            var $li = document.createElement("li");
+            $li.appendChild($text);
+            $show.appendChild($li);
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ajax 요청 페이지</h1>
+    <button id="btn">Click</button>
+    <script>
+        var aa = document.getElementById("btn");
+
+        aa.onclick = ajaxFunc;
+        function ajaxFunc() {
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () 
+            {
+                console.log('readyState =>' + xhtp.readyState); //XMLHttpRequest가 어떤 상태인지 보여줌 (1이면 서버생성했다. 2면 서버가 받았다. 3은서버가처리중
+                //4는 내가 받았다.)
+                console.log('status =>' + xhtp.status); //server상태를 보여줌 200<<찍혀나오면 잘되는겨 404<-page not found   403<-Forbidden
+                if (xhtp.readyState == 4 && xhtp.status == 200) 
+                {
+                    var data = JSON.parse(xhtp.responseText); // JSON.parse -> object타입으로 바꿔주는메소드
+                    console.log(data);
+                    data.forEach(function(a, b, c)
+                    {
+                        document.write(a.first_name+'<br>');
+                    });
+                    // document.write(data[0].first_name);
+                }
+            }
+            xhtp.open('get', 'MOCK_DATA.json', true);  //true이면 동기방식 false면 비동기방식 아무것도 안적으면 default(true);
+            xhtp.send(); //화면에 여러번 찍어주는?
+        }
+
+        //live server plugin program install해주기
+    </script>
+</body>
+
+</html>

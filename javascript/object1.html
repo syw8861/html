@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name:"도비",
+            age:300,
+            height:"1M",
+            eat: function(){
+                console.log("eat");
+            }
+        }
+        var person = [person, person]; //새로운 person 변수안에다가  person object 2개 담아주기
+        
+        person[0].age =40;
+        person[0].name="해그리드";
+        person[0].height="3M";
+
+        // var nm ="name";
+        // person.name = "Hwang";
+        // console.log(person[nm]); // person["name"] 이랑 같음
+        // console.log(person);
+
+        for(var i=0; i<person.length; i++){
+            console.log(person[i]);
+        }
+        
+        document.write("<p>"+"이름:  "+person[1].name+"</p>"); 
+        document.write("<p>"+"나이:  "+person[0].age);
+        document.write("<p>"+"키:  "+person[0]["height"]); //person안에 person을 두개 넣어줬는데 왜 1번은 안나오나?
+        console.log("---------------------------------");
+        var strAry =[];
+        strAry.push("KONG");
+        strAry.push("KING");
+        strAry.push(30);
+        strAry[strAry.length] = "Park"  
+        console.log("---------------------------------"); //kong king 30 park
+        strAry.unshift("KWKWK");// kwkwk kong king 30 park
+        // push는 배열에 뒤에다가 계속 추가해주는거  
+        strAry.unshift("QPQPQP"); //QPQP kwkwk kong king 30 park
+        //이거는 앞에다가 추가해주는거 원래 123이 있었다면 push 5해주면  1235    unshift 5 해주면  5123
+        console.log("---------------------------------");
+        strAry.pop(); //배열에 제일 마지막거 지우는거 QPQP kwkwk kong king 30
+        console.log("---------------------------------");
+        delete strAry[1]; // 배열 몇번째꺼 지우는거 QPQP kong king 30
+        console.log("---------------------------------");
+        strAry.shift(); //이건 앞에서부터 하나씩 지우는거임 kong king 30
+
+        for(var i=0; i<strAry.length; i++){
+            console.log("<p>"+"strAry에 담긴 값들 : "+strAry[i]+"</p>");
+        }
+    </script>
+</body>
+</html>

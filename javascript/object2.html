@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (var i=0; i<10; i++){
+            document.write("<p class='col'>"+i+"</p>")
+        }
+
+        var elmtAry = document.getElementsByClassName('col');
+        // console.log(elmtAry);
+        var newAry =[];
+        for(var i=0; i<elmtAry.length; i++){
+            newAry.push(elmtAry[i].innerHTML);
+
+        }
+
+        var sliceAry = newAry.slice(5); // 인덱스 5부터 뒤로 다 자르기 시작점이 0이어야 하나봄
+        // console.log(elmtAry);
+        console.log("잘라낸배열"+sliceAry);
+
+        var sliceAry1 = newAry.slice(0,3);
+
+        var sumslice = sliceAry.concat(sliceAry1); //배열 합칠때 쓰기
+        console.log("배열병합"+sumslice);
+
+        var dd = function(a, b, c){ 
+            console.log(a,b);       
+            // sum += parseInt(a);    
+            document.write("<li> index : "+b+' , '+'value : '+a)
+        };
+
+        document.write("<ul>");
+        sumslice.forEach(dd);
+        document.write("/<ul>");
+        var sum=0;
+        
+        function callbackfunction(a, b, c){
+            console.log(a,b);       
+            // sum += parseInt(a);    
+            document.write("<li> index : "+b+' , '+'value : '+a)
+        };
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <p class="show"></p> -->
+    <!-- <p class="show"></p> -->
+    <p id="show"></p>
+    <!-- <h1 class="show"></h1> -->
+    <button onclick="sum(10, 20)">Click</button>
+    <button onclick="mySum()">my Sum</button>
+    <button onclick="arrayTest()">arraysum</button>
+    <button onclick="func2('hello')">아나바다</button>
+    
+    <script src="func2.js"></script>
+    <!-- <script> -->
+        console.log(document.getElementsByClassName("show"));
+        var cols = document.getElementsByClassName("show");
+        cols[0].innerHTML = "Hello";
+        cols[1].innerHTML = "World";
+        cols[2].innerHTML = "AA";
+        // document.getElementById("show").innerHTML="<h1>hello</h1>"
+        
+      
+
+        var x=10;
+        let y =10;
+        function getXvalue(){
+            var x= 20;
+            let y= 20;
+            console.log('x1 '+x);
+            console.log('y1 '+y);
+        }
+        getXvalue();
+        var x = 10; //var타입은 전역변수에 중복선언해줘도 상관없음
+        // let y = 10; //let타입은 전역변수에서 중복선언 해줘버리면 에러가 난다.
+        console.log('x2 ' +x); //x값에 getXvalue로 불러온 local변수 20값이 올줄 알았는데
+        //전역변수에 담긴 10값이 나왔다.
+        //왜냐면 getXvalue function안에 var라는 x값을 새로 정의해줘서
+        
+        console.log('y2 ' +y); //이건 let도 var와 같다. local에서 정의해줘도 전역에값을 가져옴
+    <!-- </script> -->
+
+
+</body>
+</html>

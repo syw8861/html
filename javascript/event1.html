@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function btnfun(a, b){
+            var $tr = document.createElement("tr");
+            $td = document.createElement("td");
+            var $button = document.createElement("button");
+            $button.innerHTML = "Click";
+            $button.onmouseover = function () {
+                this.parentNode.parentNode.style.background = "yellow";
+            };
+            $button.onmouseout = function () {
+                this.parentNode.parentNode.style.background = "";
+            }
+            $button.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+            $td.appendChild($button);
+            a.appendChild($td);
+            $table.appendChild(a);
+            }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    id:<input type="text" id="idp">
+    fisrt_name:<input type="text" id="fnp">
+    last_name:<input type="text" id="lnp">
+    <button onclick="showCurrentTime" id="btn">Click</button>
+    <p id="show"></p>
+    
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = showCurrentTime;
+
+        function showCurrentTime(){
+            var idp = document.getElementById("idp").value;
+            var fnp = document.getElementById("fnp").value;
+            var lnp = document.getElementById("lnp").value;
+            
+            var allinfo = [idp, fnp, lnp];
+            
+            $tr = document.createElement("tr");
+            for(var i=0; i<allinfo.length; i++){
+                $td = document.createElement("td");
+                $td.appendChild(document.createTextNode(allinfo[i]));
+                $tr.appendChild($td);
+            }
+
+            //새로운 버튼 추가//
+            btnfun($tr, $table);
+            
+            //새로 추가되는 버튼+원래있던 버튼 누르면 텍스트입력값 입력해주기.
+            for(var i=0; i<100; i++){
+            var aa =document.getElementsByTagName("button")[i];
+            aa.onclick = showCurrentTime;
+            }
+            console.log(aa);
+
+
+            
+            /* 위에 for문으로 추가해주는거와 같음 (funtionc showCurrentTime 안에 있는거)
+            $td = document.createElement("td");
+            $td.appendChild(document.createTextNode(idp));
+            $tr.appendChild($td);
+
+            $td = document.createElement("td");
+            $td.appendChild(document.createTextNode(fnp));
+            $tr.appendChild($td);
+            
+            $td = document.createElement("td");
+            $td.appendChild(document.createTextNode(lnp));
+            $tr.appendChild($td);
+            }
+            */
+        };
+        
+
+        var lala = [{ "id": 1, "first_name": "Allyn", "last_name": "Kleis", "email": "akleis0@de.vu", "gender": "Male" },
+        { "id": 2, "first_name": "Lyssa", "last_name": "Gradly", "email": "lgradly1@ed.gov", "gender": "Female" },
+        { "id": 3, "first_name": "Sheena", "last_name": "Theodore", "email": "stheodore2@lulu.com", "gender": "Female" },
+        { "id": 4, "first_name": "Rasia", "last_name": "Bearham", "email": "rbearham3@slate.com", "gender": "Female" },
+        { "id": 5, "first_name": "Conrade", "last_name": "Alten", "email": "calten4@intel.com", "gender": "Male" }];
+
+        var titles = ['id', 'first_name', 'last_name'];
+        var $table = document.createElement('table');
+        $table.setAttribute('border', '1');
+        $table.setAttribute("id", "tbl");
+        var $tr = document.createElement("tr");
+
+        for (field of titles) {
+            var $th = document.createElement("th");
+            var $text = document.createTextNode(field.replace('_', "").toUpperCase())
+            $th.appendChild($text);
+            $tr.appendChild($th);
+        }
+
+        $table.appendChild($tr);
+        lala.forEach(function (o) {
+            var $tr = document.createElement("tr");
+            for (field of titles) {
+                var $td = document.createElement('td');
+                var $text = document.createTextNode(o[field]);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            btnfun($tr, $table);
+        });
+        var show = document.getElementById("show");
+        show.appendChild($table);
+
+
+    </script>
+</body>
+
+</html>

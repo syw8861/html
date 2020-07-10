@@ -98,6 +98,7 @@
         document.write('</table>');
 
 
+        //위에거랑 밑에거랑 같음 foreach에 function을 매개값으로 쓰냐 아니면 function을 따로 정의해주고 메소드를 불러와서
         document.write('<table border="1">');
         document.write('<tr>');
         for (f in person1) {
@@ -106,7 +107,6 @@
         document.write('</tr>')
         persons.forEach(showtable);
         document.write('</table>');
-
         function showtable(elm) {
             document.write('<tr>')
             document.write('<td>' + elm.firstName + '</td><td>' + elm.lastName + '</td><td>' + elm.age + '</td>');

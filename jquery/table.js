@@ -24,6 +24,12 @@ $(document).ready(function(){
     });
     $('#show').append($table.append($tr));
 
+
+    for(a of lala){
+        for(b in a){
+            console.log('bbbbb:'+b[2]);
+        }
+    }
     //데이터영역
     lala.forEach(function(o){
         $tr = $('<tr />').mouseenter(mouseenterFunc)

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function()
         {
@@ -13,26 +16,23 @@
         
         function showResult(){
             $.ajax({
-                url:"MOCK_DATA.json",
-                success: function(result, status, xhr) //해당 요청페이지가 success되면 해당 function을 실행 하겠다.
+                url:"studentScore.json",
+                success: function(result, status, xhr)
                 {
-                    console.log('aaa');
                     getData(result);
                     console.log(result);
                 }
             });
         }
 
-        
-        
         function getData(aa){
-            var $table = $('<table/>').attr({'border':'1','id':'tbl'});
+            var $table = $('<table/>').attr('border','1');
             var $tr=$('<tr />');
-            $tr.append($('<th/>').text('id'),
-            $('<th />').text('First_Name'),
-            $('<th />').text('Last_Name'),
-            $('<th />').text('Email'),
-            $('<th />').text('Gender'));
+            $tr.append($('<th/>').text('고객번호'),
+            $('<th />').text('고객명'),
+            $('<th />').text('전화번호'),
+            $('<th />').text('이메일'),
+            $('<th />').text('성별'));
             $table.append($tr);
 
             aa.forEach(function(o){
@@ -42,16 +42,11 @@
                     $tr.append($td);
                 }
                 $table.append($tr);
-            });
-
-            
+            });     
             $('#show').append($table);
         }
     </script>
-</head>
-<body>
-    <h1>Ajax Sample</h1>
-    <button>Show result</button>
+    <button>버튼</button>
     <p id="show"></p>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $('button').on('click', showResult);
+        });
+
+        function showResult(){
+            $.ajax({
+                url:"emp.xml",
+                success: function(result)
+                {
+                    var datas = $(result).children().children();
+                    getdata(datas);
+                    // console.log(result);
+                    // console.log(datas.children().parent().eq(1).text());
+                }
+            })
+        }
+
+        function getdata(bb){
+            var $table =$('<table/>').attr("border",'1');
+            
+            for(var j=0; j<bb.length; j++)
+            {
+            bb.eq(j).text();
+            var $tr=$('<tr />');    
+                for(var i=0; i<5; i++)
+                {
+                    $td=$('<td />').text(bb.eq(j).children().eq(i).text());
+                    $tr.append($td);
+                }
+            $table.append($tr);
+            } 
+            $('#show').append($table);
+    
+        }
+    </script>
+    <button>클릭</button>
+    <p id="show"></p>
+</body>
+</html>
